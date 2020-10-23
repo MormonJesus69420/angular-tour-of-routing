@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-tour-of-routing"
+    }
+  },
+  "defaultProject": "angular-tour-of-routing",
+  "cli": {
+    "analytics": false
+  }
 }
