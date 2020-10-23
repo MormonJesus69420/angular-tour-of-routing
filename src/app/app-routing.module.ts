@@ -1,10 +1,5 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
-import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CrisisListComponent } from './crisis-list/crisis-list.component';
@@ -18,13 +13,12 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, AppRoutingModule],
-  declarations: [
-    AppComponent,
-    HeroListComponent,
-    CrisisListComponent,
-    PageNotFoundComponent,
+  imports: [
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    ),
   ],
-  bootstrap: [AppComponent],
+  exports: [RouterModule],
 })
-export class AppModule {}
+export class AppRoutingModule {}
